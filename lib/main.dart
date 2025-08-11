@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_test/bloc/claims_bloc.dart';
 import 'package:flutter_application_test/bloc/claims_event.dart';
-import 'package:flutter_application_test/bloc/claims_state.dart';
-import 'package:flutter_application_test/view/claim_card.dart';
 import 'package:flutter_application_test/view/claim_list_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +15,7 @@ class ClaimsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Provide the ClaimsBloc to the entire application.
     return BlocProvider(
-      create: (context) => ClaimsBloc(),
+      create: (context) => ClaimsBloc()..add(FetchClaims()),
       child: MaterialApp(
         title: 'Insurance Claims',
         theme: ThemeData(

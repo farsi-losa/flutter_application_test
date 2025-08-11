@@ -16,11 +16,13 @@ class ClaimsLoading extends ClaimsState {}
 
 // State containing the list of claims after a successful fetch.
 class ClaimsLoaded extends ClaimsState {
-  final List<Claim> claims;
-  const ClaimsLoaded({required this.claims});
+  final List<Claim> allClaims;
+  final List<Claim> filteredClaims;
+
+  const ClaimsLoaded({required this.allClaims, required this.filteredClaims});
 
   @override
-  List<Object> get props => [claims];
+  List<Object> get props => [allClaims, filteredClaims];
 }
 
 // State indicating that an error occurred during data fetching.

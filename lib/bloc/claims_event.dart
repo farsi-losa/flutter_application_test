@@ -8,3 +8,12 @@ abstract class ClaimsEvent extends Equatable {
 }
 
 class FetchClaims extends ClaimsEvent {}
+
+// Event for searching claims.
+class SearchClaims extends ClaimsEvent {
+  final String query;
+  const SearchClaims({required this.query});
+
+  @override
+  List<Object> get props => [query];
+}
