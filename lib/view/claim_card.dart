@@ -43,7 +43,7 @@ class ClaimCard extends StatelessWidget {
               Text(
                 claim.body,
                 style: Theme.of(context).textTheme.bodyMedium,
-                maxLines: 3,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 8),

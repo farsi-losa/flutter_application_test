@@ -19,12 +19,15 @@ class ClaimsApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Insurance Claims',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.blueGrey,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          cardTheme: CardTheme(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+          appBarTheme: const AppBarTheme(
+            color: Colors.cyan, // Sets a custom color for the AppBar
+            iconTheme: IconThemeData(color: Colors.white),
+            titleTextStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
