@@ -1,30 +1,40 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_test/models/claims_model.dart';
+import 'package:flutter_application_test/view/claim_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_application_test/main.dart';
-
+// ===== WIDGET UNIT TESTS =====
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  group('ClaimCard Widget', () {
+    testWidgets('ClaimCard displays the correct claim information', (
+      WidgetTester tester,
+    ) async {
+      // Define a mock claim object to use for testing.
+      const testClaim = Claim(
+        userId: 1,
+        id: 101,
+        title: 'Test Claim Title',
+        body: 'This is the body of the test claim.',
+      );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+      await tester.pumpWidget(
+        const MaterialApp(home: Scaffold(body: ClaimCard(claim: testClaim))),
+      );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+      // Verify that the title is present in the widget tree.
+      expect(find.text('Test Claim Title'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      // Verify that the claim ID is present.
+      expect(find.text('Claim ID: 101'), findsOneWidget);
+
+      // Verify that the claimant ID is present.
+      expect(find.text('Claimant ID: 1'), findsOneWidget);
+
+      // Verify that the body text is present.
+      expect(find.text('This is the body of the test claim.'), findsOneWidget);
+
+      // We can also test for the absence of widgets.
+      expect(find.text('This text should not be here.'), findsNothing);
+    });
   });
 }
