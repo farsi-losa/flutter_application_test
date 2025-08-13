@@ -3,12 +3,14 @@ import 'package:equatable/equatable.dart';
 class Claim extends Equatable {
   final int userId;
   final int id;
+  final String name;
   final String title;
   final String body;
 
   const Claim({
     required this.userId,
     required this.id,
+    required this.name,
     required this.title,
     required this.body,
   });
@@ -18,6 +20,7 @@ class Claim extends Equatable {
     return Claim(
       userId: json['userId'] as int,
       id: json['id'] as int,
+      name: json['name'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
     );

@@ -34,6 +34,13 @@ class ClaimCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
+                claim.name,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge!.copyWith(fontSize: 16),
+              ),
+              const SizedBox(height: 8),
+              Text(
                 claim.title,
                 style: Theme.of(
                   context,

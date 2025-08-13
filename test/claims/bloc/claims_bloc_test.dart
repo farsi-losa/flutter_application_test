@@ -12,12 +12,14 @@ void main() {
       const Claim(
         userId: 1,
         id: 1,
+        name: 'John Doe',
         title: 'Car Accident',
         body: 'Minor fender-bender.',
       ),
       const Claim(
         userId: 2,
         id: 2,
+        name: 'Jane Smith',
         title: 'Property Damage',
         body: 'Water leak in the kitchen.',
       ),

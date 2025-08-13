@@ -13,6 +13,7 @@ void main() {
       const testClaim = Claim(
         userId: 1,
         id: 101,
+        name: 'Test Name',
         title: 'Test Claim Title',
         body: 'This is the body of the test claim.',
       );

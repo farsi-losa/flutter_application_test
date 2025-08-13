@@ -15,7 +15,7 @@ class ClaimsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Provide the ClaimsBloc to the entire application.
     return BlocProvider(
-      create: (context) => ClaimsBloc()..add(FetchClaims()),
+      create: (context) => ClaimsBloc()..add(FetchDataClaims()),
       child: MaterialApp(
         title: 'Insurance Claims',
         theme: ThemeData(

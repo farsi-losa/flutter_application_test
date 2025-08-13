@@ -7,7 +7,7 @@ abstract class ClaimsEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchClaims extends ClaimsEvent {}
+class FetchDataClaims extends ClaimsEvent {}
 
 // Event for searching claims.
 class SearchClaims extends ClaimsEvent {
